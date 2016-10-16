@@ -50,19 +50,19 @@ Alternatively you can run in from the command line.
 
 ### To get your journey details.
 1. Go to google maps. 
-2. Note the road numbers of your journey (in many cases, this should save you needing multiple boxes).
-3. Imagine a square or rectangular box (or boxes) around the roads you want data for.
+2. Note the road numbers of your journey (in many cases, this should save you needing multiple boxes). E.g. for the A3 or A3(M), the number is 3. For the M27, use 27. B roads can be used. You can have more than one road.
+3. Imagine a square or rectangular box (or boxes) around the parts of the roads you want data for.
 4. For each box, click on the map to get the South West coordinates and again to get the North East coordinates.
 
 *single box example*
 ![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_single_box.PNG?raw=true)
 
-*multi box example (not actually needed for this example)*
+*multi box example (multiple boxes not actually needed for this example)*
 ![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_multi_box.PNG)
 
 ### To run your journey details.
-1. In Program.cs, remove my coordinates and add your coordinates to the ICoordinates array.
-2. In Program.cs, remove my road numbers and add the relevant road numbers to the roadNumbers array.
+1. In Program.cs, remove my coordinates and add your box(es) coordinates to the ICoordinates array.
+2. In Program.cs, remove my road number and add the relevant road number(s) to the roadNumbers array.
 3. Run the console.
 4. Your statistics will be output to `UkAccidentStatistics\src\AccidentProcessor\Resources\Results`.
 
