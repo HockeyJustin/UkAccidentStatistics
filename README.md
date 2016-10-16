@@ -76,7 +76,7 @@ Obviously I should have written more tests, though I believe the data to be abou
 
 ## Notes
 
-Results will be output to the 'Results' folder and will overwrite old data.
+Results will be output to the `UkAccidentStatistics\src\AccidentProcessor\Resources\Results` folder and will overwrite old data.
 
 Intermediate data will be output to files in `UkAccidentStatistics\src\AccidentProcessor\Resources\Intermediate` folder for visual analysis.
 
