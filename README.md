@@ -1,12 +1,17 @@
-# Uk Accident Statistics
+# Uk Road Accident Statistics Generator
 
-## UK Accident Statistics From the [Governments Open Source Accident Data](https://data.gov.uk/dataset/road-accidents-safety-data).
+## UK Road Accident Statistics From the [Governments Open Source Accident Data](https://data.gov.uk/dataset/road-accidents-safety-data).
 
-## What is it?
+## What's the point of it?
 
-My journey to work can take anything from 25 minutes to 1.5 hrs and I wanted to know what the chances were of a long journey.
+My journey to work can take anything from 25 minutes to 1.5 hrs. I wanted to know what the chances are of a long journey.
 
-Using .NET Core, it takes the UK Road Accident statistics and enables you to learn about the accidents on roads of interest to you, or that effect your commute. It uses full year 2015 data by default.
+I've made it so you can easily get theinformation for your road journeys too.
+
+## Tech Info
+- .NET Core
+- XUnit
+- It uses full year 2015 data by default (but you can change it).
 
 
 ## What data can I get?
