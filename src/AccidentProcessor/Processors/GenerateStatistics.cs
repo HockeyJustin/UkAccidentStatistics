@@ -34,7 +34,7 @@ namespace AccidentProcessor.Processors
         bool is8to9am = dataRow.IsDateTimeBetween8and9am();
         bool is4to5pm = dataRow.IsDateTimeBetween4and5pm();
         bool is5to6pm = dataRow.IsDateTimeBetween5and6pm();
-        bool isCommuterTime = dataRow.IsDateTimeInCommuterHours();
+        bool isCommuterTime = dataRow.IsDateTimeWithinCommuterHours();
         bool isAutumn = dataRow.IsUkAutumn();
         bool isWinter = dataRow.IsUkWinter();
         bool isRoadWetDampSnowFrost = dataRow.AreConditionsWetDampSnowOrIce();

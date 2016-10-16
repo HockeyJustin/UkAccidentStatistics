@@ -18,7 +18,7 @@ namespace AccidentProcessor.Interfaces
 
     bool IsDateTimeBetween5and6pm();
 
-    bool IsDateTimeInCommuterHours();
+    bool IsDateTimeWithinCommuterHours();
 
     bool IsUkAutumn();
 

@@ -113,7 +113,7 @@ namespace AccidentProcessor.Tests.ClassesTests
       // Act
       if(startHour == -1)
       {
-        actualValue = accident.IsDateTimeInCommuterHours();
+        actualValue = accident.IsDateTimeWithinCommuterHours();
       }
       else if (startHour == 7)
       {

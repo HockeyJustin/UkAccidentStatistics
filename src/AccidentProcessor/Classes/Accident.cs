@@ -107,7 +107,7 @@ namespace AccidentProcessor.Classes
     /// <param name="time">The datetime of the accident</param>
     /// <param name="dayOfWeek">We are using this so if there are data inconsistencies, we go with the flow (i.e. DONT use the datetime)</param>
     /// <returns></returns>
-    public bool IsDateTimeInCommuterHours()
+    public bool IsDateTimeWithinCommuterHours()
     {
       // We are not looking at bank holidays, so there is a small margin of error here.
       if (IsAccidentOnAWeekDay() && 
