@@ -8,13 +8,9 @@ My journey to work can take anything from 25 minutes to 1.5 hrs. I wanted to kno
 
 I've made it so you can easily get the information for your UK road journeys too.
 
-## Tech Info
-- .NET Core (multi-platform)
-- XUnit
-- It uses full year 2015 data by default (but you can change it when new data comes out).
-
 
 ## What data can I get?
+
 Here are the sort of stats gained for a commute along the A3 (roughly Waterlooville to Hindhead).
 
 - Commuting between 7-9 AM, there is a 4.74% chance of an accident!
@@ -33,6 +29,12 @@ Here are the sort of stats gained for a commute along the A3 (roughly Waterloovi
 - 9.26% of accidents involve a van.
 
 - The months with the most accidents were January, February and June.
+
+
+## Tech Info
+- .NET Core (multi-platform)
+- XUnit
+- It uses full year 2015 data by default (but you can change it when new data comes out).
 
 
 ## How do I run it?
@@ -71,6 +73,7 @@ Alternatively you can run in from the command line.
 
 Obviously I should have written more tests, though I believe the data to be about right :)
 
+
 ## Notes
 
 Results will be output to the 'Results' folder and will overwrite old data.
@@ -84,7 +87,6 @@ There is a file with some 'Constants' that you can tweak if you are not happy wi
 If you like it, feel free to contact me here, or on [twitter](https://twitter.com/HockeyJustin).
 
 
-Happy Statting :)
 
 
 
