@@ -1,14 +1,13 @@
 # Uk Accident Statistics
 
-## UK Accident Statistics From [the Governments Open Source Accident Data](https://data.gov.uk/dataset/road-accidents-safety-data).
+## UK Accident Statistics From the [Governments Open Source Accident Data](https://data.gov.uk/dataset/road-accidents-safety-data).
 
 ## What is it?
 
-Using .NET Core, it takes the 2015 UK Road Accident statistics and enables you to learn about the accidents on roads of interest to you.
+My journey to work can take anything from 25 minutes to 1.5 hrs and I wanted to know what the chances were of a long journey.
 
-## Why?
+Using .NET Core, it takes the UK Road Accident statistics and enables you to learn about the accidents on roads of interest to you, or that effect your commute. It uses full year 2015 data by default.
 
-I created it, as my journey to work can take anything from 25 minutes to 1.5 hrs and I wanted to know what the chances were of a long journey.
 
 ## What data can I get?
 Here are the sort of stats gained for a commute along the A3 (roughly Waterlooville to Hindhead).
