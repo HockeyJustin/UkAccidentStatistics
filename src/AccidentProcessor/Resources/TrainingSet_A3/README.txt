@@ -1,0 +1,1 @@
+In one case, we have added a dummy row of data to ensure we can handle more than 2 cars in an accident. This row will not be in the live set.
