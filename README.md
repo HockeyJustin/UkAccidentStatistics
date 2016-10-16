@@ -80,7 +80,7 @@ Results will be output to the `UkAccidentStatistics\src\AccidentProcessor\Resour
 
 Intermediate data will be output to files in `UkAccidentStatistics\src\AccidentProcessor\Resources\Intermediate` folder for visual analysis.
 
-I have made some assumptions and generalisations (for example - I have only looked at the first two vehicles involved in the accidents and haven't excluded bank holidays from IsDateTimeInCommuterHours() checks to ensure checking other years will be consisten). The stats include both carriageways, though a crash on the opposite carriageway regularly causes a tailback on my side due to rubber-neckers.
+I have made some assumptions and generalisations. For example, I have only looked at the first two vehicles involved in the accidents assuming these to be the initial cause. I haven't excluded bank holidays from IsDateTimeInCommuterHours() checks to ensure checking other years will be consistent (no accidental bug generation). The stats include both carriageways, though a crash on the opposite carriageway regularly causes a tailback on my side due to rubber-neckers, so would still lead to a slightly longer commute.
 
 There is a file with some 'Constants' that you can tweak if you are not happy with my assumptions.
 
