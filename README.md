@@ -13,13 +13,13 @@ I've made it so you can easily get the information for your UK road journeys too
 
 Here are the sort of stats gained for a commute along the A3 (roughly Waterlooville to Hindhead).
 
-- Commuting between 7-9 AM, there is a 4.74% chance of an accident!
+- Commuting between 7-9 AM, there is a 4.74% chance of an accident.
 - Commuting between 4-6 PM, there is a 3.16% chance of an accident.
 - The most likely day for an accident is Thursay.
 - The most likely day for an accident during commuter hours is Friday.
 
-- Commuting between 7-9 AM in Autumn, there is a 7.69% chance of an accident!
-- Commuting between 7-9 AM in Winter, there is a 6.45% chance of an accident (there are more accidents outside commuter hours in winter)!
+- Commuting between 7-9 AM in Autumn, there is a 7.69% chance of an accident.
+- Commuting between 7-9 AM in Winter, there is a 6.45% chance of an accident (winter has more accidents, but most of those are outside commuter hours.)
 - 20.37% of accidents are in adverse conditions.
 - Most impacts are to the front of the car.
 
@@ -90,7 +90,11 @@ Results will be output to the `UkAccidentStatistics\src\AccidentProcessor\Resour
 
 Intermediate data will be output to files in `UkAccidentStatistics\src\AccidentProcessor\Resources\Intermediate` folder for visual analysis.
 
-I have made some assumptions and generalisations. For example, I have only looked at the first two vehicles involved in the accidents assuming these to be the initial cause. I haven't excluded bank holidays from IsDateTimeInCommuterHours() checks to ensure checking other years will be consistent (no accidental bug generation). The stats include both carriageways, though a crash on the opposite carriageway regularly causes a tailback on my side due to rubber-neckers, so would still lead to a slightly longer commute.
+I have made some assumptions and generalisations. For example:
+- I have only looked at the first two vehicles involved in the accidents assuming these to be the initial cause.
+- I haven't excluded bank holidays from IsDateTimeInCommuterHours() checks to ensure checking other years will be consistent (no accidental bug generation). 
+- The stats include both carriageways. Couldn't find a heading, though a crash on the opposite carriageway regularly causes a tailback on my side due to rubber-neckers, so would still lead to a slightly longer commute.
+- Have taken 'Commuter Hours' to be 6-9AM and 4-7PM.
 
 There is a file with some 'Constants' that you can tweak if you are not happy with my assumptions.
 
