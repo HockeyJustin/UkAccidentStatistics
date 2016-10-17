@@ -48,21 +48,28 @@ Alternatively you can run in from the command line.
 
 ## How do I get my own stats?
 
-### To get your journey details.
+### Worked example (South Newbury to Maidenhead).
 1. Go to google maps. 
-2. Note the road numbers of your journey (in many cases, this should save you needing multiple boxes). E.g. for the A3 or A3(M), the number is 3. For the M27, use 27. B roads can be used. You can have more than one road.
-3. Imagine a square or rectangular box (or boxes) around the parts of the roads you want data for.
-4. For each box, click on the map to get the South West coordinates and again to get the North East coordinates.
+2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we use A339, A34, M4 and the A308(M). Our numbers are 339,34, 4 and 308. You can get stats for 1 or many roads.
+3. Imagine a square or rectangular box (you can have multiple boxes) that includes all parts of the roads you want data for (see image below).
+4. For each box, click on the map in the South West point to get the first coordinates and do the same for the North East coordinates (see image below).
 
-*single box example*
-![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_single_box.PNG?raw=true)
+*Example*
+![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_Newbury_To_Maidenhead_A339_A34_M4_A308M.PNG?raw=true)
 
-*multi box example (multiple boxes not actually needed for this example)*
+*aside for info -> multi box example (though multiple boxes not actually needed for this example)*
 ![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_multi_box.PNG)
 
 ### To run your journey details.
-1. In Program.cs, remove my coordinates and add your box(es) coordinates to the ICoordinates array.
-2. In Program.cs, remove my road number and add the relevant road number(s) to the roadNumbers array.
+1. In Program.cs, remove my coordinates info and add your box(es) coordinates to the ICoordinates array e.g.
+
+`ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
+`ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
+
+2. In Program.cs, remove my road number(s) and add the relevant road number(s) to the roadNumbers array.
+
+`int[] roadNumbers = new int[] { 339, 34, 4, 308 };`
+
 3. Run the console.
 4. Your statistics will be output to `UkAccidentStatistics\src\AccidentProcessor\Resources\Results`.
 
