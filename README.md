@@ -62,12 +62,16 @@ Alternatively you can run it from the command line.
 
 ### To run your journey details.
 1. In Program.cs, remove my coordinates and add your box(es) coordinates to the ICoordinates array. Make sure this variable is used in the `arrayOfAreas` e.g.
-`ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
-`ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
 2. In Program.cs, remove my road number(s) and add the relevant road number(s) to the roadNumbers array.
-`int[] roadNumbers = new int[] { 339, 34, 4, 308 };`
 3. Run the console.
 4. Your statistics will be output to `UkAccidentStatistics\src\AccidentProcessor\Resources\Results`.
+
+The code affected will look like:
+
+`ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
+`ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
+`int[] roadNumbers = new int[] { 339, 34, 4, 308 };`
+`ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
 
 
 ## Unit Tests
