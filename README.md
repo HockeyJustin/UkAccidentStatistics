@@ -43,25 +43,25 @@ Here are the sort of stats gained for a commute along the A3 (roughly Waterloovi
 2. Open it in Visual Studio Community Edition (free). You may need to install [.NET Core](https://www.microsoft.com/net/core#windows) separately.
 3. Hit Run.
 
-Alternatively you can run in from the command line.
+Alternatively you can run it from the command line.
 
 
 ## How do I get my own stats?
 
 ### Worked example (South Newbury to Maidenhead).
 1. Go to google maps. 
-2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we use A339, A34, M4 and the A308(M). Our numbers are 339,34, 4 and 308. You can get stats for 1 or many roads.
+2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we travel on the A339, A34, M4 and the A308(M). Our numbers are 339,34, 4 and 308. You can get stats for 1 or many roads.
 3. Imagine a square or rectangular box (you can have multiple boxes) that includes all parts of the roads you want data for (see image below).
-4. For each box, click on the map in the South West point to get the first coordinates and do the same for the North East coordinates (see image below).
+4. For each box, click on the map in the South West point to get the first coordinates (latitude,longitude) and do the same for the North East coordinates (see image below).
 
 *Example*
-![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_Newbury_To_Maidenhead_A339_A34_M4_A308M.PNG?raw=true)
+![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_Newbury_To_Maidenhead_A339_A34_M4_A308M.png?raw=true)
 
 *aside for info -> multi box example (though multiple boxes not actually needed for this example)*
 ![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_multi_box.PNG)
 
 ### To run your journey details.
-1. In Program.cs, remove my coordinates info and add your box(es) coordinates to the ICoordinates array e.g.
+1. In Program.cs, remove my coordinates and add your box(es) coordinates to the ICoordinates array. Make sure this variable is used in the `arrayOfAreas` e.g.
 
 `ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
 `ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
