@@ -50,7 +50,7 @@ Alternatively you can run it from the command line.
 
 ### Worked example (South Newbury to Maidenhead).
 1. Go to google maps. 
-2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we travel on the A339, A34, M4 and the A308(M). Our numbers are 339,34, 4 and 308. You can get stats for 1 or many roads.
+2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we travel on the A339, A34, M4 and the A308(M). Our numbers are 339,34, 4 and 308. You can get stats for one or many roads.
 3. Imagine a square or rectangular box (you can have multiple boxes) that includes all parts of the roads you want data for (see image below).
 4. For each box, click on the map in the South West point to get the first coordinates (latitude,longitude) and do the same for the North East coordinates (see image below).
 
@@ -62,14 +62,10 @@ Alternatively you can run it from the command line.
 
 ### To run your journey details.
 1. In Program.cs, remove my coordinates and add your box(es) coordinates to the ICoordinates array. Make sure this variable is used in the `arrayOfAreas` e.g.
-
 `ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
 `ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
-
 2. In Program.cs, remove my road number(s) and add the relevant road number(s) to the roadNumbers array.
-
 `int[] roadNumbers = new int[] { 339, 34, 4, 308 };`
-
 3. Run the console.
 4. Your statistics will be output to `UkAccidentStatistics\src\AccidentProcessor\Resources\Results`.
 
