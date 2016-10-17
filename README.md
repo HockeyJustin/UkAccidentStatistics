@@ -69,8 +69,11 @@ Alternatively you can run it from the command line.
 The code affected will look like:
 
 `ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
+
 `ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
+
 `int[] roadNumbers = new int[] { 339, 34, 4, 308 };`
+
 `ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
 
 
