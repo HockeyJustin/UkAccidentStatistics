@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AccidentProcessor.Interfaces
 {
-    public interface IStatisticsGenerator
-    {
+	public interface IStatisticsGenerator
+	{
 		OutputStatistics GetStatisticsFromRelevantData(List<Accident> relevantDataRows);
-    }
+	}
 }

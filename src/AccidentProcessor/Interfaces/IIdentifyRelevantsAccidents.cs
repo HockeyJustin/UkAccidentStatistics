@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AccidentProcessor.Interfaces
 {
-    public interface IIdentifyRelevantsAccidents
-    {
+	public interface IIdentifyRelevantsAccidents
+	{
 		string[] GetRelevantRows(string[] rawData, ICoordinates[] arrayOfAreas, int[] expectedRoad1Numbers);
 
 

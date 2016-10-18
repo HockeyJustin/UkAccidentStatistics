@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace AccidentProcessor.Interfaces
 {
-  public interface IRunAnalysis
-  {
-    void RunAnalysis(bool runFullDataParse, ICoordinates[] arrayOfAreas, int[] roadNumbers);
-  }
+	public interface IRunAnalysis
+	{
+		void RunAnalysis(bool runFullDataParse, ICoordinates[] arrayOfAreas, int[] roadNumbers);
+	}
 }

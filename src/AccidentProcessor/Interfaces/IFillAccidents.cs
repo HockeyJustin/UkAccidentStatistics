@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AccidentProcessor.Interfaces
 {
-    public interface IFillAccidents
-    {
+	public interface IFillAccidents
+	{
 		List<Accident> FillAccidentData(string[] relevantAccidentRows, string[] relevantVehicleRows);
-    }
+	}
 }

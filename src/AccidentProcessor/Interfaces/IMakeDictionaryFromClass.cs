@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace AccidentProcessor.Interfaces
 {
-  public interface IMakeDictionaryFromClass
-  {
-    Dictionary<string, string> GetPropertyNameAndValueFromClass(object classInstance);
-  }
+	public interface IMakeDictionaryFromClass
+	{
+		Dictionary<string, string> GetPropertyNameAndValueFromClass(object classInstance);
+	}
 }

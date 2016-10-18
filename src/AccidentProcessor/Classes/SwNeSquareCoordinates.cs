@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace AccidentProcessor.Classes
 {
 	/// <summary>
-	/// This will contain a set of coordinates that will make a square 
-	/// area to check if a test coord set lies within.
+	/// This will contain a set of coordinates that will make a square or rectangular
+	/// area to check if a test coordinate set lies within.
 	/// </summary>
 	public class SwNeSquareCoordinates : ICoordinates
 	{
@@ -29,11 +29,11 @@ namespace AccidentProcessor.Classes
 		double NorthEastLatitude { get; set; }
 
 
-		/// <summary
+		/// <summary>
 		/// Determine whether a test data point is within the bounds set by this class.
 		/// </summary>
-		/// <param name="latitude"></param>
-		/// <param name="longitude"></param>
+		/// <param name="latitude">The latitude coordinate to check if it's within bounds</param>
+		/// <param name="longitude">The longitude coordinate to check if it's within bounds</param>
 		/// <returns></returns>
 		public bool IsLocationWithinCoordinates(double latitude, double longitude)
 		{

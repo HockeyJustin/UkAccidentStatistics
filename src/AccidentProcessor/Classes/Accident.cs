@@ -75,6 +75,7 @@ namespace AccidentProcessor.Classes
 
     public bool IsAccidentOnAWeekDay()
     {
+			// NOTE: We take the day of the week from the date as the csv had some errors in the 'Day of Week' field.
       if (this.DayOfWeek == DayOfWeek.Saturday || this.DayOfWeek == DayOfWeek.Sunday)
         return false;
       else
@@ -101,12 +102,6 @@ namespace AccidentProcessor.Classes
       return this.AccidentDateAndTime.Hour == 17;
     }
 
-    /// <summary>
-    /// Determines whether the accident was in commuter hours.
-    /// </summary>
-    /// <param name="time">The datetime of the accident</param>
-    /// <param name="dayOfWeek">We are using this so if there are data inconsistencies, we go with the flow (i.e. DONT use the datetime)</param>
-    /// <returns></returns>
     public bool IsDateTimeWithinCommuterHours()
     {
       // We are not looking at bank holidays, so there is a small margin of error here.
@@ -175,9 +170,12 @@ namespace AccidentProcessor.Classes
       return this.Vehicle2DriverAge > 16;
     }
 
-
-
-    public int GetNumberOfVehiclesInvolvedInDataset()
+		/// <summary>
+		/// Get the number of vehicles we will look at. It will be 1 or 2.
+		/// We only look at the first two cars in these stats.
+		/// </summary>
+		/// <returns>1 or 2</returns>
+		public int GetNumberOfVehiclesInvolvedInDataset()
     {
       // NOTE: The maximum will be 2, as we are only looking at the initial collision
       return this.HasSecondVehicle == true ? 2 : 1;
@@ -197,7 +195,6 @@ namespace AccidentProcessor.Classes
       return false;
     }
 
-
     public bool IsACarInvolved()
     {
       if (this.Vehicle1Type == VehicleType.Car || (this.HasSecondVehicle && this.Vehicle2Type == VehicleType.Car))
@@ -206,7 +203,6 @@ namespace AccidentProcessor.Classes
       }
       return false;
     }
-
 
     public bool IsAVanInvolved()
     {

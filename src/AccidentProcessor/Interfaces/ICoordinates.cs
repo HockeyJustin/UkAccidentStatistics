@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace AccidentProcessor.Interfaces
 {
-    public interface ICoordinates
-    {
+	public interface ICoordinates
+	{
 		bool IsLocationWithinCoordinates(double latitude, double longitude);
 	}
 }
