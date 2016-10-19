@@ -106,7 +106,6 @@
 -r:"C:\Users\Justi\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll"
 -r:"C:\Users\Justi\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll"
 -r:"C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\bin\Debug\netcoreapp1.0\AccidentProcessor.dll"
-"C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor.Tests\SwNeSquareCoordinatesTests.cs"
 "C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor.Tests\ClassesTests\AccidentTests.cs"
 "C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor.Tests\ClassesTests\GenerateStatisticsTests.cs"
 "C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor.Tests\ClassesTests\SwNeSquareCoordinatesTests.cs"

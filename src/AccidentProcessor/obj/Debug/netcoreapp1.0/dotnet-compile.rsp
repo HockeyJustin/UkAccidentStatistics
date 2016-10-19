@@ -91,13 +91,13 @@ C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\Acci
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Classes\Constants.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Classes\Enums.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Classes\OutputStatistics.cs
-C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Classes\SwNeSquareCoordinates.cs
+C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Classes\SwNeSquareCoordinatesAndRoads.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IAccident.cs
-C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\ICoordinates.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\ICsvParser.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IFillAccidents.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IIdentifyRelevantsAccidents.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IMakeDictionaryFromClass.cs
+C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IRoadsAndCoordinates.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IRunAnalysis.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Interfaces\IStatisticsGenerator.cs
 C:\Users\Justi\Dropbox\JProjects\AccidentProcessor\UkAccidentStatistics\src\AccidentProcessor\Processors\CsvParser.cs

@@ -8,7 +8,7 @@ namespace AccidentProcessor.Interfaces
 {
 	public interface IIdentifyRelevantsAccidents
 	{
-		string[] GetRelevantRows(string[] rawData, ICoordinates[] arrayOfAreas, int[] expectedRoad1Numbers);
+		string[] GetRelevantRows(string[] rawData, IRoadsAndCoordinates[] arrayOfAreas);
 
 
 		string[] GetMatchingVehicleRowsFromAccidentData(string[] relevantAccidents, string[] fullVehiclesList);

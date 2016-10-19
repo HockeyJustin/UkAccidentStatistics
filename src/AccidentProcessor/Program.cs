@@ -7,6 +7,7 @@ using AccidentProcessor.Interfaces;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using AccidentProcessor.Processors;
+using System.Diagnostics;
 
 namespace AccidentProcessor
 {
@@ -33,16 +34,23 @@ namespace AccidentProcessor
 
 			try
 			{
-				ICoordinates waterloovilleToHindheadTunnel = new SwNeSquareCoordinates(50.876343, -1.0169207, 51.11028, -0.7232787);
-				int[] roadNumbers = new int[] { 3 };
+        //IRoadsAndCoordinates m25 = new SwNeSquareCoordinatesAndRoads(51.224137, -0.6247897, 51.75548, 0.3703563, new string[] { "M25" });
 
-				//ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);
-				//int[] roadNumbers = new int[] { 339, 34, 4, 308 };
+        IRoadsAndCoordinates waterloovilleToHindheadTunnel = new SwNeSquareCoordinatesAndRoads(50.876343, -1.0169207, 51.11028, -0.7232787, new string[] { "A3", "A3(M)" });
 
-				ICoordinates[] arrayOfAreas = new ICoordinates[] { waterloovilleToHindheadTunnel };
+        //IRoadsAndCoordinates newburyToMaidenhead = new SwNeSquareCoordinatesAndRoads(51.3995, -1.331433, 51.506467, -0.712058, new string[] { "A339", "A34", "M4", "A308(M)" });
 
-				analysisRunner.RunAnalysis(true, arrayOfAreas, roadNumbers);
-			}
+
+        IRoadsAndCoordinates[] arrayOfAreas = new IRoadsAndCoordinates[] { waterloovilleToHindheadTunnel };
+
+
+        Stopwatch st = new Stopwatch();
+        st.Start();
+
+				analysisRunner.RunAnalysis(true, arrayOfAreas);
+        st.Stop();
+        Console.WriteLine($"Time taken: {st.ElapsedMilliseconds}ms");
+      }
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());

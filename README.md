@@ -50,7 +50,7 @@ Alternatively you can run it from the command line.
 
 ### Worked example (South Newbury to Maidenhead).
 1. Go to google maps. 
-2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we travel on the A339, A34, M4 and the A308(M). Our numbers are 339,34, 4 and 308. You can get stats for one or many roads.
+2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we travel on the A339, A34, M4 and the A308(M). 
 3. Imagine a square or rectangular box (you can have multiple boxes) that includes all parts of the roads you want data for (see image below).
 4. For each box, click on the map in the South West point to get the first coordinates (latitude,longitude) and do the same for the North East coordinates (see image below).
 
@@ -61,21 +61,18 @@ Alternatively you can run it from the command line.
 ![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_multi_box.PNG)
 
 ### To run your journey details.
-1. In Program.cs, remove my coordinates and add your box(es) coordinates to the ICoordinates array. Make sure this variable is used in the `arrayOfAreas`.
-2. In Program.cs, remove my road number(s) and add the relevant road number(s) to the roadNumbers array.
+1. In Program.cs, remove my coordinates.
+2. Add your box(es) coordinates to the IRoadsAndCoordinates array and add your road numbers without spaces as a string array. e.g. "A339", "A34", "M4" and the "A308(M)". Make sure this variable is used in the `arrayOfAreas`.
 3. Run the console.
 4. Your statistics will be output to `UkAccidentStatistics\src\AccidentProcessor\Resources\Results`.
 
 The code affected will look like:
 
-`ICoordinates newburyToMaidenhead = new SwNeSquareCoordinates(51.3995, -1.331433, 51.506467, -0.712058);`
+`IRoadsAndCoordinates newburyToMaidenhead = new SwNeSquareCoordinatesAndRoads(51.3995, -1.331433, 51.506467, -0.712058, new string[] { "A339", "A34", "M4", "A308(M)" });`
 
-`ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
+`IRoadsAndCoordinates[] arrayOfAreas = new IRoadsAndCoordinates[] { newburyToMaidenhead };`
 
-`int[] roadNumbers = new int[] { 339, 34, 4, 308 };`
-
-`ICoordinates[] arrayOfAreas = new ICoordinates[] { newburyToMaidenhead };`
-
+`analysisRunner.RunAnalysis(true, arrayOfAreas);`
 
 ## Unit Tests
 

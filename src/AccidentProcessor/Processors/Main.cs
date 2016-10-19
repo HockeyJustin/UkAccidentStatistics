@@ -27,7 +27,7 @@ namespace AccidentProcessor.Processors
     }
 
 
-    public void RunAnalysis(bool runFullDataParse, ICoordinates[] arrayOfAreas, int[] roadNumbers)
+    public void RunAnalysis(bool runFullDataParse, IRoadsAndCoordinates[] arrayOfAreas)
     {
 
 
@@ -57,7 +57,7 @@ namespace AccidentProcessor.Processors
         List<string> relevantListWithHeader = new List<string>() { allAccidnetDataRows[0] };
 
         // *STEP 2*: Identify the rows that have accidents within our specified area/roads
-        relevantAccidentList = _relevantAccidentRowsIdentifier.GetRelevantRows(allAccidnetDataRows, arrayOfAreas, roadNumbers);
+        relevantAccidentList = _relevantAccidentRowsIdentifier.GetRelevantRows(allAccidnetDataRows, arrayOfAreas);
         relevantListWithHeader.AddRange(relevantAccidentList);
 
         // save the data out to save the time of parsing in future.

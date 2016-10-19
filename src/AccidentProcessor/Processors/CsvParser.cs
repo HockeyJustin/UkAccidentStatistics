@@ -40,23 +40,7 @@ namespace AccidentProcessor.Processors
         if (fileContentLines == null || !fileContentLines.Any())
           return returnRows;
 
-        foreach (var line in fileContentLines)
-        {
-          var lineLocal = line;
-
-          Console.WriteLine($"{consoleRef} Line: {rowCount++}");
-          string[] fields = regex.Split(lineLocal);
-          string streamLineOut = String.Join(",", fields);
-
-          var trimmedLine = streamLineOut.Replace("\"", "");
-          sb.AppendLine(trimmedLine);
-        }
-        var result = sb.ToString();
-
-        returnRows = result.Split(System.Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-        return returnRows;
-
-
+        return fileContentLines;
       }
       catch (Exception ex)
       {
