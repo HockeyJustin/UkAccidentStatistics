@@ -15,12 +15,8 @@ namespace AccidentProcessor.Processors
     /// <summary>
     /// Returns a list of rows within our set georaphical boundaries.
     /// </summary>
-    /// <param name="arrayOfAreas">The boxes we have set for the road (i.e. you can look at part of a road (e.g. a3 around Petersfield)</param>
-    /// <param name="rawData">All the accident data.</param>
-    /// <param name="expectedRoadClassMinimum">//1 = Motorway, 2=A(M), 3=A, 4=B, 5=C, 6=Unclassified. (allow a range in the method as some are A/A(M))</param>
-    /// <param name="expectedRoadClassMaximum">//1 = Motorway, 2=A(M), 3=A, 4=B, 5=C, 6=Unclassified. (allow a range in the method)</param>
-    /// <param name="expectedRoadNumbers">The number of the road e.g. 3 for A3. An array to allow multiple numbers.</param>
-    /// <returns></returns>
+    /// <param name="arrayOfAreas">The boxes we have set for the road (i.e. you can look at part of a road (e.g. a3 around Petersfield)</param>    
+    /// <returns>Of the csv rows of accidents, this will return ones within our target area.</returns>
     public string[] GetRelevantRows(string[] rawData, IRoadsAndCoordinates[] arrayOfAreas)
     {
       List<string> returnRows = new List<string>();

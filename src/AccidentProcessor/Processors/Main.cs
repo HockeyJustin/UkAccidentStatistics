@@ -29,8 +29,6 @@ namespace AccidentProcessor.Processors
 
     public void RunAnalysis(bool runFullDataParse, IRoadsAndCoordinates[] arrayOfAreas)
     {
-
-
       //var accidentsCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\TrainingSet_A3\Accidents_2015.csv";
       //var accidentVehiclesCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\TrainingSet_A3\Vehicles_2015.csv";
       var accidentsCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Accidents_2015.csv";

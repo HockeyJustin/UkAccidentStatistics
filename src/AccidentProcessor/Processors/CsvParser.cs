@@ -19,8 +19,7 @@ namespace AccidentProcessor.Processors
 
       try
       {
-        Regex regex = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
-        StringBuilder sb = new StringBuilder();
+        // NOTE: Doing a very quick get, with little checking here.
         string fileContents = "";
 
         // Get the contents from the file
