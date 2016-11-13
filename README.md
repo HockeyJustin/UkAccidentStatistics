@@ -11,7 +11,7 @@ I've made it so you can easily get the information for your UK road journeys too
 
 ## What data can I get?
 
-Here are the sort of stats gained for a commute along the A3 (roughly Waterlooville to Hindhead).
+Here are the sort of stats gained for my commute along the A3:
 
 - Commuting between 7-9 AM, there is a 4.74% chance of an accident.
 - Commuting between 4-6 PM, there is a 3.16% chance of an accident.
