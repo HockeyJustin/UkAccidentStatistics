@@ -34,14 +34,12 @@ namespace AccidentProcessor
 
 			try
 			{
-        //IRoadsAndCoordinates m25 = new SwNeSquareCoordinatesAndRoads(51.224137, -0.6247897, 51.75548, 0.3703563, new string[] { "M25" });
+        //IRoadsAndCoordinates m25 = new SwNeSquareCoordinatesAndRoads(51.224137, -0.6247897, 51.75548, 0.3703563, new string[] { "M25" });       
 
-        IRoadsAndCoordinates waterloovilleToHindheadTunnel = new SwNeSquareCoordinatesAndRoads(50.876343, -1.0169207, 51.11028, -0.7232787, new string[] { "A3", "A3(M)" });
-
-        //IRoadsAndCoordinates newburyToMaidenhead = new SwNeSquareCoordinatesAndRoads(51.3995, -1.331433, 51.506467, -0.712058, new string[] { "A339", "A34", "M4", "A308(M)" });
+        IRoadsAndCoordinates newburyToMaidenhead = new SwNeSquareCoordinatesAndRoads(51.3995, -1.331433, 51.506467, -0.712058, new string[] { "A339", "A34", "M4", "A308(M)" });
 
 
-        IRoadsAndCoordinates[] arrayOfAreas = new IRoadsAndCoordinates[] { waterloovilleToHindheadTunnel };
+        IRoadsAndCoordinates[] arrayOfAreas = new IRoadsAndCoordinates[] { newburyToMaidenhead };
 
 
         Stopwatch st = new Stopwatch();

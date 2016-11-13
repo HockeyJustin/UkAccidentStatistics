@@ -53,12 +53,10 @@ Alternatively you can run it from the command line.
 2. Note the road number(s) of your journey (in many cases, this should save you needing multiple boxes). E.g. For this commute, we travel on the A339, A34, M4 and the A308(M). 
 3. Imagine a square or rectangular box (you can have multiple boxes) that includes all parts of the roads you want data for (see image below).
 4. For each box, click on the map in the South West point to get the first coordinates (latitude,longitude) and do the same for the North East coordinates (see image below).
+Usually you will only need one box, but you can have more than one.
 
 *Example*
 ![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_Newbury_To_Maidenhead_A339_A34_M4_A308M.png?raw=true)
-
-*aside for info -> multi box example (though multiple boxes not actually needed for this example)*
-![alt tag](https://github.com/HockeyJustin/UkAccidentStatistics/blob/master/src/AccidentProcessor/Resources/Reference/_area_of_investigation_multi_box.PNG)
 
 ### To run your journey details.
 1. In Program.cs, remove my coordinates.
