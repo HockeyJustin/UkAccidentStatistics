@@ -8,105 +8,106 @@ using System.Text.RegularExpressions;
 
 namespace AccidentProcessor.Processors
 {
-  public class Main : IRunAnalysis
-  {
-    IStatisticsGenerator _statisticsGenerator;
-    IIdentifyRelevantsAccidents _relevantAccidentRowsIdentifier;
-    IFillAccidents _accidentDataFiller;
-    IMakeDictionaryFromClass _statsParser;
-    ICsvParser _csvParser;
+	public class Main : IRunAnalysis
+	{
+		IStatisticsGenerator _statisticsGenerator;
+		IIdentifyRelevantsAccidents _relevantAccidentRowsIdentifier;
+		IFillAccidents _accidentDataFiller;
+		IMakeDictionaryFromClass _statsParser;
+		ICsvParser _csvParser;
 
-    public Main(IStatisticsGenerator statisticsGenerator, IIdentifyRelevantsAccidents relevantAccidentRowsIdentifier, IFillAccidents accidentDataFiller,
-                IMakeDictionaryFromClass statsParser, ICsvParser csvParser)
-    {
-      _statisticsGenerator = statisticsGenerator;
-      _relevantAccidentRowsIdentifier = relevantAccidentRowsIdentifier;
-      _accidentDataFiller = accidentDataFiller;
-      _statsParser = statsParser;
-      _csvParser = csvParser;
-    }
-
-
-    public void RunAnalysis(bool runFullDataParse, IRoadsAndCoordinates[] arrayOfAreas)
-    {
-      //var accidentsCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\TrainingSet_A3\Accidents_2015.csv";
-      //var accidentVehiclesCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\TrainingSet_A3\Vehicles_2015.csv";
-      var accidentsCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Accidents_2015.csv";
-      var accidentVehiclesCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Vehicles_2015.csv";
+		public Main(IStatisticsGenerator statisticsGenerator, IIdentifyRelevantsAccidents relevantAccidentRowsIdentifier, IFillAccidents accidentDataFiller,
+					IMakeDictionaryFromClass statsParser, ICsvParser csvParser)
+		{
+			_statisticsGenerator = statisticsGenerator;
+			_relevantAccidentRowsIdentifier = relevantAccidentRowsIdentifier;
+			_accidentDataFiller = accidentDataFiller;
+			_statsParser = statsParser;
+			_csvParser = csvParser;
+		}
 
 
-      // A sneaky 'Person of Interest' reference to the "relevant list". No disrespect intended.
-      var relevantAccidentsFile = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Intermediate\Relevant_Accidents.csv";
-      var relevantVehiclesFile = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Intermediate\Relevant_Vehicles.csv";
-
-      string statisticsFilePath = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Results\Results.csv";
-
-      string[] relevantAccidentList = null;
-      string[] relevantVehicleList = null;
+		public void RunAnalysis(bool runFullDataParse, IRoadsAndCoordinates[] arrayOfAreas, int year)
+		{
+			//var accidentsCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\TrainingSet_A3\Accidents_2015.csv";
+			//var accidentVehiclesCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\TrainingSet_A3\Vehicles_2015.csv";
+			var accidentsCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Accidents_" + year + ".csv";
+			var accidentVehiclesCsvLocation = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Vehicles_" + year + ".csv";
 
 
+			// Relevant accidents are those that fall within the bounds set.
+			// The 'Relevant' list will be created by this applciation and saved in the 'intermediate' location.
+			var relevantAccidentsFile = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Intermediate\Relevant_Accidents.csv";
+			var relevantVehiclesFile = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Intermediate\Relevant_Vehicles.csv";
 
-      if (runFullDataParse)
-      {
-        // *STEP 1*: Get the accident data				
-        var allAccidnetDataRows = _csvParser.ReadCsvFromFile("Ac", accidentsCsvLocation);
+			string statisticsFilePath = Regex.Split(Assembly.GetEntryAssembly().Location, "bin")[0] + @"Resources\Results\Results.csv";
 
-        // we will output the data with the headers to keep things relevant.
-        List<string> relevantListWithHeader = new List<string>() { allAccidnetDataRows[0] };
-
-        // *STEP 2*: Identify the rows that have accidents within our specified area/roads
-        relevantAccidentList = _relevantAccidentRowsIdentifier.GetRelevantRows(allAccidnetDataRows, arrayOfAreas);
-        relevantListWithHeader.AddRange(relevantAccidentList);
-
-        // save the data out to save the time of parsing in future.
-        System.IO.File.WriteAllLines(relevantAccidentsFile, relevantListWithHeader);
+			string[] relevantAccidentList = null;
+			string[] relevantVehicleList = null;
 
 
-        // *STEP 3*: Get all the vehicle data.
-        var allVehicleData = _csvParser.ReadCsvFromFile("Vh", accidentVehiclesCsvLocation);
 
-        List<string> relevantVehiclesListWithHeader = new List<string>() { allVehicleData[0] };
+			if (runFullDataParse)
+			{
+				// *STEP 1*: Get the accident data				
+				var allAccidnetDataRows = _csvParser.ReadCsvFromFile("Ac", accidentsCsvLocation);
 
-        // *STEP 4*: reduce down to only have a list of vehicles that match our accident
-        relevantVehicleList = _relevantAccidentRowsIdentifier.GetMatchingVehicleRowsFromAccidentData(relevantAccidents: relevantAccidentList, fullVehiclesList: allVehicleData);
+				// we will output the data with the headers to keep things relevant.
+				List<string> relevantListWithHeader = new List<string>() { allAccidnetDataRows[0] };
 
-        relevantVehiclesListWithHeader.AddRange(relevantVehicleList);
+				// *STEP 2*: Identify the rows that have accidents within our specified area/roads
+				relevantAccidentList = _relevantAccidentRowsIdentifier.GetRelevantRows(allAccidnetDataRows, arrayOfAreas);
+				relevantListWithHeader.AddRange(relevantAccidentList);
 
-        // save the data out to save the time of parsing in future.
-        System.IO.File.WriteAllLines(relevantVehiclesFile, relevantVehiclesListWithHeader);
-
-
-        Console.WriteLine($"Relevants: {relevantAccidentList.Count()}");
-        Console.WriteLine($"Vehicles: {relevantVehicleList.Count()}");
-      }
+				// save the data out to save the time of parsing in future.
+				System.IO.File.WriteAllLines(relevantAccidentsFile, relevantListWithHeader);
 
 
-      if (relevantAccidentList == null)
-      {
-        relevantAccidentList = _csvParser.ReadCsvFromFile("Rel Ac", relevantAccidentsFile);
-        relevantAccidentList = relevantAccidentList.Skip(1).ToArray();
-      }
+				// *STEP 3*: Get all the vehicle data.
+				var allVehicleData = _csvParser.ReadCsvFromFile("Vh", accidentVehiclesCsvLocation);
 
-      if (relevantVehicleList == null)
-      {
-        relevantVehicleList = _csvParser.ReadCsvFromFile("Rel Vh", relevantVehiclesFile);
-        relevantVehicleList = relevantVehicleList.Skip(1).ToArray();
-      }
+				List<string> relevantVehiclesListWithHeader = new List<string>() { allVehicleData[0] };
 
+				// *STEP 4*: reduce down to only have a list of vehicles that match our accident
+				relevantVehicleList = _relevantAccidentRowsIdentifier.GetMatchingVehicleRowsFromAccidentData(relevantAccidents: relevantAccidentList, fullVehiclesList: allVehicleData);
 
-      // *STEP 5*: Fill the accident data in a format we can easily make stats from
-      List<Accident> relevantAccidentData = _accidentDataFiller.FillAccidentData(relevantAccidentList, relevantVehicleList);
+				relevantVehiclesListWithHeader.AddRange(relevantVehicleList);
+
+				// save the data out to save the time of parsing in future.
+				System.IO.File.WriteAllLines(relevantVehiclesFile, relevantVehiclesListWithHeader);
 
 
-      // *STEP 6*: Make the stats
-      OutputStatistics relevantStats = _statisticsGenerator.GetStatisticsFromRelevantData(relevantAccidentData);
+				Console.WriteLine($"Relevants: {relevantAccidentList.Count()}");
+				Console.WriteLine($"Vehicles: {relevantVehicleList.Count()}");
+			}
 
-      // *STEP 7*: Make a list we can read
-      var statsList = _statsParser.GetPropertyNameAndValueFromClass(relevantStats);
 
-      // *STEP 8*: Output the results
-      _csvParser.OutputCsvResults(statsList, statisticsFilePath);
-    }
+			if (relevantAccidentList == null)
+			{
+				relevantAccidentList = _csvParser.ReadCsvFromFile("Rel Ac", relevantAccidentsFile);
+				relevantAccidentList = relevantAccidentList.Skip(1).ToArray();
+			}
 
-  }
+			if (relevantVehicleList == null)
+			{
+				relevantVehicleList = _csvParser.ReadCsvFromFile("Rel Vh", relevantVehiclesFile);
+				relevantVehicleList = relevantVehicleList.Skip(1).ToArray();
+			}
+
+
+			// *STEP 5*: Fill the accident data in a format we can easily make stats from
+			List<Accident> relevantAccidentData = _accidentDataFiller.FillAccidentData(relevantAccidentList, relevantVehicleList);
+
+
+			// *STEP 6*: Make the stats
+			OutputStatistics relevantStats = _statisticsGenerator.GetStatisticsFromRelevantData(relevantAccidentData);
+
+			// *STEP 7*: Make a list we can read
+			var statsList = _statsParser.GetPropertyNameAndValueFromClass(relevantStats);
+
+			// *STEP 8*: Output the results
+			_csvParser.OutputCsvResults(statsList, statisticsFilePath);
+		}
+
+	}
 }

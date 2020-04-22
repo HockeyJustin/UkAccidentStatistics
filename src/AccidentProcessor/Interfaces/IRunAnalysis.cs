@@ -7,6 +7,6 @@ namespace AccidentProcessor.Interfaces
 {
 	public interface IRunAnalysis
 	{
-		void RunAnalysis(bool runFullDataParse, IRoadsAndCoordinates[] arrayOfAreas);
+		void RunAnalysis(bool runFullDataParse, IRoadsAndCoordinates[] arrayOfAreas, int year);
 	}
 }

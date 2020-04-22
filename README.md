@@ -4,14 +4,16 @@
 
 ## What's the point of it?
 
-My journey to work can take anything from 25 minutes to 1.5 hrs. I wanted to know what the chances are of a long journey.
+Does it feel like you're often held up by an accident? I wanted to know what the chances are of a long journey.
 
-I've made it so you can easily get the information for your UK road journeys too.
+I've made it so you can get the information for your UK road journeys too.
 
 
 ## What data can I get?
 
-Here are the sort of stats gained for my commute along the A3:
+The official data lags a bit - for example, 2018 data was added Sept 2019, so the current dataset is 2018. We use the 'Road Safety Data - Vehicles YYYY' and 'Road Safety Data - Accidents YYYY', renaming the files and putting them in the 'Resources' folder.
+
+Here are the sort of stats gained for my commute along the A3 (using the original 2015 dataset):
 
 - Commuting between 7-9 AM, there is a 4.74% chance of an accident.
 - Commuting between 4-6 PM, there is a 3.16% chance of an accident.
@@ -34,7 +36,7 @@ Here are the sort of stats gained for my commute along the A3:
 ## Tech Info
 - .NET Core (multi-platform)
 - XUnit
-- It uses full year 2015 data by default (but you can change it when new data comes out).
+- It uses full year 2018 data by default (but you can change it when new data comes out).
 
 
 ## How do I run it?
@@ -93,7 +95,7 @@ I have made some assumptions and generalisations. For example:
 
 There is a file with some 'Constants' that you can tweak if you are not happy with my assumptions.
 
-If you like it, feel free to contact me here, or on [twitter](https://twitter.com/HockeyJustin).
+If you like it, feel free to contact me here, or on [twitter](https://twitter.com/JsAndDotNet).
 
 
 
